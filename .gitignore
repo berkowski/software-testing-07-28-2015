@@ -1,0 +1,8 @@
+*pyc
+**/__pycache__
+**/.ropeproject
+
+code/bin
+code/include
+code/lib
+code/local

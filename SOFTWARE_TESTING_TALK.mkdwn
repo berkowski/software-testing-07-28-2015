@@ -1,0 +1,46 @@
+Topics
+======
+
+- Disclaimer
+
+- Goal of testing
+  - There will be bugs.
+  - The myth of 100% coverage
+
+- (Practical) Goal of testing
+- What types of testing?
+  - unit <--
+  - functional  <--
+  - regression
+
+- Tools
+  - Test-helpers <----
+  - Your IDE (vim, emacs, whatever)
+  - Test Environments (levels of overlay)
+    - virtualenv (thin)
+    - pyenv/docker (medium)
+    - vagrant/virtualbox (thick)
+
+- Other helpful things
+  - Use a code style!
+  - Use comments!!!!!
+  - Use build tools! (make, cmake, python-setuptools)
+  - Use package managers! (apt, pacman, pip)
+
+- Testing Tools (Python)
+  - doctest 
+  - unittest 
+  - mock (backported to 2.7.x via pypi)
+  
+- Tools (C/C++)
+  - gtest
+  - gmock
+
+- Integrating with your Build
+  - CMake
+
+- Special: Testing Qt
+  - spying on signals
+
+- Python Example:  Sentry's favorite serial flavour - SAIL
+  
