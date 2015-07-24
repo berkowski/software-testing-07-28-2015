@@ -3,6 +3,7 @@ Tests division method of WhoiMath
 """
 
 import unittest
+import mock
 from random import randint
 
 from whoiMath import WhoiMath
@@ -19,6 +20,7 @@ def trusted_division(a, b):
     return a * 1.0 / b
 
 
+@mock.patch('whoiMath.WhoiMath.send')
 class TestWhoiMathDivision(unittest.TestCase):
 
     def setUp(self):
@@ -27,7 +29,7 @@ class TestWhoiMathDivision(unittest.TestCase):
         self.max_value = 100
         self.num_samples = 100
 
-    def testDivision(self):
+    def testDivision(self, mockSerial):
         "Test division"
 
         for _ in range(self.num_samples):
@@ -41,3 +43,13 @@ class TestWhoiMathDivision(unittest.TestCase):
                 expected, actual,
                 "%f != %f, Failed test with a=%d b=%d" % (expected, actual, a, b)
             )
+
+    def testDivisionSend(self, mockSerial):
+        "Test send hook"
+
+        a = 6
+        b = 3
+
+        result = self.whoiMath.divide(a, b, send=True)
+        self.whoiMath.send.assert_called_once_with(result)
+
