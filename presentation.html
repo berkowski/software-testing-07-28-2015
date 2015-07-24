@@ -77,9 +77,34 @@
           <script type="text/template">
             ### What's Covered (Python)
             - Using virtualenv to isolate your development environment
-            - Writing simple unit tests using python's <i>unittest</i> module
+            - Writing simple unit tests using python's <i>doctest</i> and <i>unittest</i> modules
             - Dealing with 3rd party dependencies using python's <i>mock</i> module
             - Automating testing with <i>py.test</i> and <i>setuptools</i> integration
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ### virtualenv
+            - Create lightweight, project-specific python environments.
+            - Easily bridge development/deployment differences.
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ### Unit testing in Python
+            - doctests:  Write your tests in your python code's docstrings for extra
+              user brownie points!
+            - unittests:  For when your unit tests are more complicated, or you want to
+              generate large numbers of tests
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ### Dealing with external code with </i>mock</i>
+            - <i>mock</i> is built into the <i>unittest</i> package in python 3.4, backport is availalbe for 2.7.x through pypi
+            - Stub-out external software modules OR hardware interaction.
+            - Tests are based on <i>assumed</i> functionality of what's stubbed. 
+            - Tests are only as good as your assumptions! <!-- .element: class="fragment highlight-green" data-fragment-index="0" -->
           </script>
         </section>
       </section>
