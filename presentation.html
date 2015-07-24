@@ -13,7 +13,7 @@
       <div class="slides">
         <section data-markdown>
           <script type="text/template">
-            ### (Pracitcal) Software Testing
+            ### (Pracitcal) Software Tests
 
             Zac Berkowitz
           </script>
@@ -22,28 +22,36 @@
         <section data-markdown>
           <script type="text/template">
             ### Disclamer
+            - There are whole books, blogs, <i>idealogogies</i> about proper methods and implementations.
+            - There are <i>teams</i> devoted to this stuff in larger dev environments.
+            - The basics are simple, but their implemntation can be dependant on language and frameworks.
+            - I'll talk about some methods I've found useful..
           </script>
         </section>
 
         <section data-markdown>
           <script type="text/template">
             ### Goals of Testing
+            - Predictable Codebases
+            - Some kind of runtime assurance.
           </script>
         </section>
 
         <section data-markdown>
           <script type="text/template">
             ### Practical Goals of Testing
+            - Easy to write / easier to run.
+            - Extendable
           </script>
         </section>
 
         <section data-markdown>
           <script type="text/template">
             ### Types of Software Tests
-            - Unit  <!-- .element: class="fragment highlight-green" data-fragment-index="1" -->
-            - Functional <!-- .element: class="fragment highlight-green" data-fragment-index="1" -->
-            - Integration
-            - Regression
+            - Unit: White box.  Defined output for given input, with knowledge of internals  <!-- .element: class="fragment highlight-green" data-fragment-index="1" -->
+            - Functional: Black box.  Known outputs for given inputs, no knowledge of internals  <!-- .element: class="fragment highlight-green" data-fragment-index="1" -->
+            - Integrationa: Software modules combined and tested at their interfaces
+            - Regression: Software changes introduce new bugs?
           </script>
         </section>
 
@@ -53,18 +61,28 @@
             - Test-helpers (test runners, packages, etc.)
             - Your IDE of choice.
             - Test Environments
-
           </script>
-          <section data-markdown>
-            <script type="text/template">
-              ### Environments
-              - virtualenv (thin)
-              - pyenv (medium)
-              - vagrant/virtualbox (thick)
-            </script>
-          </section>
         </section>
 
+        <section data-markdown>
+          <script type="text/template">
+            ### Environments
+            - virtualenv (thin)
+            - pyenv (medium)
+            - vagrant/virtualbox (thick)
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ### What's Covered (Python)
+            - Using virtualenv to isolate your development environment
+            - Writing simple unit tests using python's <i>unittest</i> module
+            - Dealing with 3rd party dependencies using python's <i>mock</i> module
+            - Automating testing with <i>py.test</i> and <i>setuptools</i> integration
+          </script>
+        </section>
+      </section>
       </div>
     </div>
     <script src="reveal.js/lib/js/head.min.js"></script>
