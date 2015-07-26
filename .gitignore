@@ -3,8 +3,12 @@
 **/.ropeproject
 
 *swp
+*bak
 
-code/bin
-code/include
-code/lib
-code/local
+pip-selfcheck.json
+
+code*/bin
+code*/include
+code*/lib
+code*/local
+code*/share
