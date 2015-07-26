@@ -7,7 +7,8 @@ class PyTest(TestCommand):
 
     def initialize_options(self):
         TestCommand.initialize_options(self)
-        self.pytest_args = []
+        # Add doctests and make verbose by default
+        self.pytest_args = ['--doctest-modules', '-v']
 
     def finalize_options(self):
         TestCommand.finalize_options(self)
@@ -17,6 +18,9 @@ class PyTest(TestCommand):
     def run_tests(self):
         #import here, cause  outside the eggs aren't loaded
         import pytest
+        # if '--doctest-modules' not in self.pytest_args:
+        #     self.pytest_args += " --doctest-modules"
+
         errno = pytest.main(self.pytest_args)
         return errno
 
