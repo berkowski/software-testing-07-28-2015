@@ -10,7 +10,6 @@ author:  Zac Berkowitz <zberkowitz@whoi.edu>
 class WhoiMath(object):
     """
     Simple math operators for WHOI software.
-
     methods:
         add(a,b)       Return sum of a and b
         subtract(a,b)  Return difference of a and b

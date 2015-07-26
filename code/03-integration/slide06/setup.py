@@ -18,7 +18,7 @@ class PyTest(TestCommand):
         #import here, cause  outside the eggs aren't loaded
         import pytest
         errno = pytest.main(self.pytest_args)
-        sys.exit(errno)
+        return errno
 
 setup(
     name = "WhoiMath",

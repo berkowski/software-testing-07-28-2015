@@ -3,111 +3,16 @@
   <head>
     <meta charset="utf-8">
 
-    <title>reveal.js - Slide Transitions</title>
+    <title>Intro to Software Testing with Python</title>
 
     <link rel="stylesheet" href="reveal.js/css/reveal.css">
     <link rel="stylesheet" href="reveal.js/css/theme/whoi.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown>
-          <script type="text/template">
-            ### (Pracitcal) Software Tests
-
-            Zac Berkowitz
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-            ### Disclamer
-            - There are whole books, blogs, <i>idealogogies</i> about proper methods and implementations.
-            - There are <i>teams</i> devoted to this stuff in larger dev environments.
-            - The basics are simple, but their implemntation can be dependant on language and frameworks.
-            - I'll talk about some methods I've found useful..
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-            ### Goals of Testing
-            - Predictable Codebases
-            - Some kind of runtime assurance.
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-            ### Practical Goals of Testing
-            - Easy to write / easier to run.
-            - Extendable
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-            ### Types of Software Tests
-            - Unit: White box.  Defined output for given input, with knowledge of internals  <!-- .element: class="fragment highlight-green" data-fragment-index="1" -->
-            - Functional: Black box.  Known outputs for given inputs, no knowledge of internals  <!-- .element: class="fragment highlight-green" data-fragment-index="1" -->
-            - Integrationa: Software modules combined and tested at their interfaces
-            - Regression: Software changes introduce new bugs?
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-            ### Tools
-            - Test-helpers (test runners, packages, etc.)
-            - Your IDE of choice.
-            - Test Environments
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-            ### Environments
-            - virtualenv (thin)
-            - pyenv (medium)
-            - vagrant/virtualbox (thick)
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-            ### What's Covered (Python)
-            - Using virtualenv to isolate your development environment
-            - Writing simple unit tests using python's <i>doctest</i> and <i>unittest</i> modules
-            - Dealing with 3rd party dependencies using python's <i>mock</i> module
-            - Automating testing with <i>py.test</i> and <i>setuptools</i> integration
-          </script>
-        </section>
-        <section data-markdown>
-          <script type="text/template">
-            ### virtualenv
-            - Create lightweight, project-specific python environments.
-            - Easily bridge development/deployment differences.
-          </script>
-        </section>
-        <section data-markdown>
-          <script type="text/template">
-            ### Unit testing in Python
-            - doctests:  Write your tests in your python code's docstrings for extra
-              user brownie points!
-            - unittests:  For when your unit tests are more complicated, or you want to
-              generate large numbers of tests
-          </script>
-        </section>
-        <section data-markdown>
-          <script type="text/template">
-            ### Dealing with external code with </i>mock</i>
-            - <i>mock</i> is built into the <i>unittest</i> package in python 3.4, backport is availalbe for 2.7.x through pypi
-            - Stub-out external software modules OR hardware interaction.
-            - Tests are based on <i>assumed</i> functionality of what's stubbed. 
-            - Tests are only as good as your assumptions! <!-- .element: class="fragment highlight-green" data-fragment-index="0" -->
-          </script>
-        </section>
-      </section>
+        <section data-markdown="presentation.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section> 
       </div>
     </div>
     <script src="reveal.js/lib/js/head.min.js"></script>
@@ -197,6 +102,9 @@
       parallaxBackgroundHorizontal: '',
       parallaxBackgroundVertical: '',
 
+      width: 1200,
+      margin: 0.1,
+
       dependencies: [
         // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
         { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -207,7 +115,7 @@
 
         // Syntax highlight for <code> elements
         { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-
+        // { src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
         // Zoom in and out with Alt+click
         { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
 
