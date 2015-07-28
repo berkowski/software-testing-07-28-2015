@@ -84,6 +84,7 @@ class WhoiDialogTest(unittest.TestCase):
         # ... and it only had one element
         self.assertEqual(len(spy[0]), 1)
 
+        # Get that element...
         emittedText = spy[0][0]
 
         # Verify the value of the signal

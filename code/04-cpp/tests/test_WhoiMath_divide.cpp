@@ -1,6 +1,11 @@
+#include <time.h>
+#include <stdlib.h>
+
 #include "whoiMath.h"
 
 #include <gtest/gtest.h>
+
+const int N_TRIALS = 1000;
 
 float trusted_divide(const float &a, const float &b){
   return a * (1.0 / b);
@@ -35,6 +40,15 @@ TEST_F(WhoiMathDivideTests, Identity){
 TEST_F(WhoiMathDivideTests, IntegerDivision) {
   EXPECT_EQ(whoiMath->divide(5, 3), trusted_divide(5, 3));
 }
+
+TEST_F(WhoiMathDivideTests, FloatDivision) {
+  for(int i=0;i<N_TRIALS;i++){
+    const int a = rand();
+    const int b = rand();
+    EXPECT_EQ(whoiMath->divide(a, b), trusted_divide(a, b));
+  }
+}
+
 
 int main(int argc, char** argv) {
   // Disables elapsed time by default.
