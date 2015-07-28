@@ -5,20 +5,7 @@ Tests send method of WhoiMath
 import unittest
 import mock
 
-from random import randint
-
 from whoiMath import WhoiMath
-
-
-def trusted_division(a, b):
-    """
-    Returns the quotient of a and b
-
-
-    Used for testing as 'trusted' implemntation of division.
-    """
-
-    return a * 1.0 / b
 
 
 class TestWhoiMathSend(unittest.TestCase):
@@ -39,7 +26,7 @@ class TestWhoiMathSend(unittest.TestCase):
         expected_serial_string = str(expected_result)
 
         # Run it
-        result = whoiMath.send(expected_result)
+        whoiMath.send(expected_result)
 
         # The underlying Serial.write method should have been called once
         # with the expected string.  Use the convenience method

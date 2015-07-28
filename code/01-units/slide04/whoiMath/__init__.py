@@ -5,6 +5,7 @@ Simple math class for use in WHOI software.... because why not?
 
 author:  Zac Berkowitz <zberkowitz@whoi.edu>
 """
+# from __future__ import division
 
 
 class WhoiMath(object):
@@ -41,7 +42,7 @@ class WhoiMath(object):
         >>> WhoiMath.divide(6, 3)
         2.0
 
-        # >>> WhoiMath.divide(10, 2.5)
-        # 4
+        >>> WhoiMath.divide(10, 2.5)
+        4
         """
         return float(a) / b

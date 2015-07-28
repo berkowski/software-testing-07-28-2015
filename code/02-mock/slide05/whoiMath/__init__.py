@@ -10,6 +10,7 @@ author:  Zac Berkowitz <zberkowitz@whoi.edu>
 
 import serial
 
+
 class WhoiMath(object):
     """
     Simple math operators for WHOI software.
@@ -22,6 +23,10 @@ class WhoiMath(object):
     """
 
     def __init__(self, port=None):
+        """
+        :param port: serial port
+        :type port: str
+        """
 
         self.serial = serial.Serial(port)
 
@@ -41,8 +46,8 @@ class WhoiMath(object):
         >>> whoiMath.divide(6, 3)
         2.0
 
-        # >>> WhoiMath.divide(10, 2.5)
-        # 4
+        >>> WhoiMath.divide(10, 2.5)
+        4
         """
         result = float(a) / b
 

@@ -83,8 +83,8 @@ test_env$>source bin/activate
 
 
 
-### Unit testing in Python
-- doctests:  Write your tests in your python code's docstrings!
+### Unit testing in Python (`doctest`)
+- `doctest`:  Write your tests in your python code's docstrings!
 
   <pre><code class="python">
 def multiply(a,b):
@@ -96,13 +96,25 @@ def multiply(a,b):
       """
   </code></pre>
 
-- unittests:  For when your unit tests are more complicated, or you want to
-  generate large numbers of tests
+- Great for examples!
+- But they're pretty limited.
+  - Very strict relationship between input and output
 
 
 
-### Dealing with external code.
-- *mock* is built into the *unittest* package in python 3.4
+### Unit testing in Python (`unittest`)
+- `unittest`:  For when your unit tests are more complicated
+  - Or you want to generate large numbers of tests
+- "fixtures" allow setting up/tearing down whole test environments
+  - Before a series of tests.
+  - Before each *individual* test.
+- Full python code (subclass the `unittest.TestCase` object)
+  - Aim to keep your tests organized and simple.
+
+
+
+### Dealing with external code. (mock)
+- `mock` is built into the `unittest` package in python 3.x
   - Backport is available for 2.7.x through pypi
 - Stub external software modules OR hardware interaction.
 - Tests are based on *assumed* functionality of what's stubbed. 
@@ -114,7 +126,7 @@ def multiply(a,b):
 - Test runners ease running of test
   - Run unit-tests and doctests with one command!
   - Can generate more complicated tests
-- *setuptools* (setup.py) can also be used as a testing gateway!
+- `setuptools` (`setup.py`) can also be used as a testing gateway!
 - We'll use py.test with a setup.py file to run tests more easily
 
 
@@ -123,7 +135,7 @@ def multiply(a,b):
 - Unit-tests can be extended to Qt's signals/slots mechanism!
   - Simulate user interactions with GUI objects (mouse clicks, keyboard strokes, etc.)
   - Listen for and check contents of emitted signals.
-- For PyQt this is limited to PyQt5 (PyQt4 does not expose QSignalSpy)
+- For PyQt this is limited to PyQt5 (PyQt4 does not expose `QSignalSpy`)
 
 
 

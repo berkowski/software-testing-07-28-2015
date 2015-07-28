@@ -41,7 +41,7 @@ class WhoiMath(object):
         >>> WhoiMath.divide(6, 3)
         2
 
-        # >>> WhoiMath.divide(10, 2.5)
-        # 4
+        >>> WhoiMath.divide(10, 2.5)
+        4.0
         """
         return a / b

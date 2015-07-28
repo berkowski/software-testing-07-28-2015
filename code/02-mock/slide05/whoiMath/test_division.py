@@ -20,7 +20,6 @@ def trusted_division(a, b):
     return a * 1.0 / b
 
 
-@mock.patch('whoiMath.WhoiMath.send')
 class TestWhoiMathDivision(unittest.TestCase):
 
     def setUp(self):
@@ -29,7 +28,7 @@ class TestWhoiMathDivision(unittest.TestCase):
         self.max_value = 100
         self.num_samples = 100
 
-    def testDivision(self, mockSerial):
+    def testDivision(self):
         "Test division"
 
         for _ in range(self.num_samples):
@@ -41,15 +40,23 @@ class TestWhoiMathDivision(unittest.TestCase):
 
             self.assertEqual(
                 expected, actual,
-                "%f != %f, Failed test with a=%d b=%d" % (expected, actual, a, b)
+                "%f!=%f, Failed test with a=%d b=%d" % (expected, actual, a, b)
             )
 
-    def testDivisionSend(self, mockSerial):
+    def testDivisionSend(self):
         "Test send hook"
 
         a = 6
         b = 3
 
-        result = self.whoiMath.divide(a, b, send=True)
-        self.whoiMath.send.assert_called_once_with(result)
+        # Create a mock object:
+        mockSend = mock.MagicMock()
 
+        # Overwrite the 'send' method with a magicMock object
+        self.whoiMath.send = mockSend
+
+        # Run the divide, and 'send' the result.  We only care that send is
+        # called.  (We're testing division -- NOT if 'send' works)
+        result = self.whoiMath.divide(a, b, send=True)
+
+        self.whoiMath.send.assert_called_once_with(result)
