@@ -37,10 +37,11 @@ class WhoiMath(object):
         """
         Return the quotient of two numbers.
 
+        Examples:
         >>> WhoiMath.divide(6, 3)
         2
 
-        # >>> WhoiMath.divide(10, 2.5)
-        # 4
+        >>> WhoiMath.divide(10, 2.5)
+        4
         """
         return a / b
